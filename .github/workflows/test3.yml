@@ -1,0 +1,15 @@
+name: test2
+on:
+  push:
+    branches:
+      -main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    -name: repository test
+      run:actions/checkout@v4
+    -name: list
+      run: ls -la
+    -name: date
+      run: date
