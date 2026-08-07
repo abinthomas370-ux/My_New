@@ -1,4 +1,9 @@
 name: test2
+env:
+  APP_NAME: devops-company-site
+  ENVIRONMENT: development
+  COMPANY: CloudNova
+ 
 on:
   push:
     branches:
@@ -10,6 +15,10 @@ jobs:
     -  name: repository test
        uses: actions/checkout@v4
     -  name: list
-       run: ls -la
+       run: | 
+         echo $APP_NAME 
+         echo $ENVIRONMENT
+         echo $COMPANY
+       
     -  name: date
        run: date
