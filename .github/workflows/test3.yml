@@ -17,6 +17,7 @@ jobs:
     -  name: list
        run: | 
          echo "verify the following details" $APP_NAME $ENVIRONMENT $COMPANY
+         echo ${{github.actor}} ${{github.repository}} ${{github.ref}} ${{github.sha}}
        env:
          APP_NAME: test app
          ENVIRONMENT: test environment
