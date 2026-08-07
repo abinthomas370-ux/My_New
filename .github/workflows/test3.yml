@@ -1,8 +1,14 @@
 name: test2
+env:
+  APP_NAME: devops-company-site
+  ENVIRONMENT: development
+  COMPANY: CloudNova
+ 
 on:
   push:
     branches:
       -main
+      -abinthomas370-ux-patch-2
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,6 +16,10 @@ jobs:
     -  name: repository test
        uses: actions/checkout@v4
     -  name: list
-       run: ls -la
+       run: | 
+         echo $APP_NAME 
+         echo $ENVIRONMENT
+         echo $COMPANY
+       
     -  name: date
        run: date
